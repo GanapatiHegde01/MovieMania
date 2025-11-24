@@ -1,0 +1,50 @@
+.movie_list {
+  padding: 0.3rem 2rem;
+  font-family: inherit;
+}
+
+.movie_list header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.movie_list header h1 {
+  font-size: 2rem;
+  color: yellow;
+}
+
+.movie_list_fs {
+  display: flex;
+}
+
+.movie_list_fs .movie_filter {
+  display: flex;
+  list-style-type: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.movie_list_fs .movie_filter li {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.movie_filter_item.active {
+  border-bottom: 1px solid white;
+  font-weight: 400;
+}
+
+.movie_sorting {
+  margin-left: 15px;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.movie_cards_container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap:3rem;
+}

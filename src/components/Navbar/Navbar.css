@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 2rem;
+}
+
+.navbar > h1{
+    color: yellow;
+}
+
+.navbar_links a{
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+}
