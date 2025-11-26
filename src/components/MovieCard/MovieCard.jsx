@@ -1,23 +1,33 @@
 import React from "react";
 import "./MovieCard.css";
 
-const MovieCard = () => {
+const MovieCard = ({ movieData }) => {
   return (
-    <a href="" className="movie_card">
+    <a
+      href={`https://www.themoviedb.org/movie/${movieData.id}`}
+      target="_blank"
+      className="movie_card"
+    >
       <img
-        src="https://m.media-amazon.com/images/I/81dae9nZFBS._SY741_.jpg"
+        src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
         alt=""
         className="movie_poster"
       />
       <div className="movie_details">
-        <h6 className="movie_name">Movie Name</h6>
+        <h6 className="movie_name">
+          {movieData.title.length > 40
+            ? movieData.title.slice(0, 40) + "..."
+            : movieData.title}
+        </h6>
         <div className="movie_date_rate">
-          <p>10-10-2025</p>
-          <p>9.0⭐</p>
+          <p>{movieData.release_date}</p>
+          <p>{movieData.vote_average}⭐</p>
         </div>
         <div className="movie_description">
           <p>
-            Lorem ipsum,, atque eos voluptates est fdsadf unde porro aspernatur laborum.
+            {movieData.overview.length > 70
+              ? movieData.overview.slice(0, 70) + "..."
+              : movieData.overview}
           </p>
         </div>
       </div>
