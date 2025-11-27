@@ -1,6 +1,7 @@
 .movie_list {
   padding: 0.3rem 2rem;
   font-family: inherit;
+  margin-bottom: 2rem;
 }
 
 .movie_list header {
@@ -9,9 +10,11 @@
   align-items: center;
   margin-bottom: 2rem;
 }
+
 .movie_list header h1 {
   font-size: 2rem;
-  color: yellow;
+  color: var(--body_heading);
+  user-select: none;
 }
 
 .movie_list_fs {
@@ -23,7 +26,6 @@
   list-style-type: none;
   margin-right: 10px;
   cursor: pointer;
- 
 }
 
 .movie_list_fs .movie_filter li {
@@ -33,21 +35,22 @@
   padding: 0 1rem;
 }
 .movie_filter_item.active {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--body_color);
   font-weight: 400;
 }
 
 .movie_sorting {
   margin-left: 15px;
   padding: 0.3rem 0.6rem;
-  border: none;
+  border: 1px solid gray;
   border-radius: 10px;
   cursor: pointer;
+  user-select: none;
 }
 
-.movie_cards_container{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap:3rem;
+.movie_cards_container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 3rem;
 }

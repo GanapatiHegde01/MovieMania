@@ -4,7 +4,7 @@ import "./MovieList.css";
 import MovieCard from "../MovieCard/MovieCard";
 import FilterGroup from "./FilterGroup";
 
-const MovieList = () => {
+const MovieList = ({ type, title }) => {
   const [movieData, setMovieData] = useState([]);
   const [filteredMovieData, setFilteredMovieData] = useState([]);
   const [minRating, setRating] = useState(0);
@@ -18,14 +18,14 @@ const MovieList = () => {
   useEffect(() => {
     const fetchMovie = async () => {
       const response = await fetch(
-        "https://api.themoviedb.org/3/movie/popular?api_key=80fe8241ddf1c46a3ec774bd91850a34"
+        `https://api.themoviedb.org/3/movie/${type}?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
       );
       const movieDetails = await response.json();
       setMovieData(movieDetails.results);
       setFilteredMovieData(movieDetails.results);
     };
     fetchMovie();
-  }, []);
+  }, [type]);
 
   useEffect(() => {
     const sortedData = _.orderBy(filteredMovieData, sort.by, sort.order);
@@ -47,9 +47,9 @@ const MovieList = () => {
   console.log(sort);
 
   return (
-    <div className="movie_list">
+    <div className="movie_list" id={type}>
       <header className="list_header">
-        <h1>Popular 🔥</h1>
+        <h1>{title} {type==="popular"?'🔥':'🌟'}</h1>
         <div className="movie_list_fs">
           <FilterGroup
             minRating={minRating}

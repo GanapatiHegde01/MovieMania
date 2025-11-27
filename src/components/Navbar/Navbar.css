@@ -1,17 +1,19 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid gray;
-    padding: 2rem;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: 2rem;
 }
 
-.navbar > h1{
-    color: yellow;
+.navbar > h1 {
+  color: var(--body_heading);
 }
-
-.navbar_links a{
-  color: white;
+.navbar_links {
+  display: flex;
+}
+.navbar_links a {
+  color: var(--body_color);
   text-decoration: none;
   margin-left: 2rem;
 }
