@@ -10,7 +10,7 @@ const SingleMovie = () => {
     }).then((data)=>console.log(data)
     )
   }, [movieId]);
-  return <div>SingleMovie</div>;
+  return <div>Coming soon ....</div>;
 };
 
 export default SingleMovie;
