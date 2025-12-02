@@ -3,11 +3,13 @@ import _ from "lodash";
 import "./MovieList.css";
 import MovieCard from "../MovieCard/MovieCard";
 import FilterGroup from "./FilterGroup";
+import Loader from "../../Common/Loader";
 
 const MovieList = ({ type, title }) => {
   const [movieData, setMovieData] = useState([]);
   const [filteredMovieData, setFilteredMovieData] = useState([]);
   const [minRating, setRating] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const [sort, setSort] = useState({
     by: "default",
     order: "asc",
@@ -17,12 +19,14 @@ const MovieList = ({ type, title }) => {
 
   useEffect(() => {
     const fetchMovie = async () => {
+      setIsLoading(true);
       const response = await fetch(
         `https://api.themoviedb.org/3/movie/${type}?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
       );
       const movieDetails = await response.json();
       setMovieData(movieDetails.results);
       setFilteredMovieData(movieDetails.results);
+      setIsLoading(false);
     };
     fetchMovie();
   }, [type]);
@@ -45,7 +49,7 @@ const MovieList = ({ type, title }) => {
     setSort((prev) => ({ ...prev, [name]: value }));
   };
   console.log(sort);
-
+ if(isLoading) return <Loader />
   return (
     <div className="movie_list" id={type}>
       <header className="list_header">

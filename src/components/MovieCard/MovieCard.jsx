@@ -1,11 +1,12 @@
 import React from "react";
 import "./MovieCard.css";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movieData }) => {
   return (
-    <a
-      href={`https://www.themoviedb.org/movie/${movieData.id}`}
-      target="_blank"
+    <Link
+      to={`/movie/${movieData.id}`}
+   
       className="movie_card"
     >
       <img
@@ -31,7 +32,7 @@ const MovieCard = ({ movieData }) => {
           </p>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 

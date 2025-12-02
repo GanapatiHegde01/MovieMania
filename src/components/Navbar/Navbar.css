@@ -17,3 +17,7 @@
   text-decoration: none;
   margin-left: 2rem;
 }
+.navbar_links a.active{
+  font-weight: 800;
+  color:rgb(255, 31, 102);
+}

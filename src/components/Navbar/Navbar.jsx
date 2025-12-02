@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import DarkMode from "../DarkMode/DarkMode";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [mode, setMode] = useState(false);
@@ -16,15 +17,11 @@ const Navbar = () => {
       <h1>MovieManiac</h1>
       <div className="navbar_links">
         <DarkMode onClick={handleMode} />
-        <a href="#popular">
-          Popular<span>🔥</span>
-        </a>
-        <a href="#top_rated">
-          Top Rated <span>🌟</span>
-        </a>
-        <a href="#upcoming">
-          Upcoming <span>🥳</span>
-        </a>
+        <NavLink to={"/"}>Popular🔥</NavLink>
+        <NavLink to={"/top_rated"}>Top Rated🌟</NavLink>
+        <NavLink to={"/upcoming"}>Upcoming🥳</NavLink>
+       
+        
       </div>
     </nav>
   );
